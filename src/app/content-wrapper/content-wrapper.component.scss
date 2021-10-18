@@ -1,0 +1,92 @@
+
+
+.content-search-button {
+    padding-left: 0px;
+}
+
+.search-input {
+    transform: translateX(-100px);
+    transition: transform 0.25s, opacity 0.25s ease-in-out;
+    width: 5%;
+    opacity: 0;
+    visibility: hidden;
+    &.active {
+        width: 175%;
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0px);
+    }
+}
+
+
+    .content-wrapper {
+        background-color: #f4f6f9;
+        .content {
+            .contentHeader {
+                .mobile-navbar {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: flex-end;
+                    padding: 16px 29px;
+                    .mobile-navbar-buttons {
+                        display: flex;
+                        flex-direction: row;
+                        .headerUserScreen {
+                            margin-left: 5px;
+                        }
+                        .mobile-navbar-open-message {
+                            margin-left: 5px;
+                        }
+                    }
+                    .mobile-navbar-buttons {
+                        .mobile-navbar-open-main-menu {
+                            display: none;
+                        }
+                        .mobile-navbar-open-expand-black {
+                            display: none;
+                        }
+                    }
+                    .search-group {
+                        display: none;
+                        .search-group-buttons {
+                            img.search-button {
+                                padding: -1px;
+                                border: 1px solid black;
+                                height: 19px;
+                                left: 162px;
+                                top: 29.5px;
+                            }
+                            img.close-search {
+                                border: 1px solid black;
+                                height: 19px;
+                                left: 180px;
+                                top: 41.5px;
+                                border-top-right-radius: 10px;
+                                border-bottom-right-radius: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+@media (min-width: 300px) {
+    //mobile
+
+}
+@media (min-width: 480px) {
+    //tablet
+    
+}
+@media (min-width: 662px) {
+    //tablet1
+}
+@media (min-width: 768px) {
+    //mini Laptop
+}
+@media (min-width: 990px) {
+    //laptop
+}
+

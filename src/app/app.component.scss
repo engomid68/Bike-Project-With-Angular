@@ -1,0 +1,26 @@
+.container-fluid {
+  width: 100%;
+  padding-right: 7.5px;
+  padding-left: 7.5px;
+  margin-right: auto;
+  margin-left: auto;
+
+  //********************************* ScrollBar Hidden**********************
+  .scroll-hidden::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .scroll-hidden::-webkit-scrollbar-button {
+    visibility: hidden;
+  }
+
+  .scroll-hidden::-webkit-scrollbar-thumb {
+    background: #cc005f;
+    border-radius: 50px;
+  }
+
+  .scroll-hidden::-webkit-scrollbar-track {
+    border-radius: 50px;
+  }
+  //********************************* ScrollBar Hidden**********************
+}

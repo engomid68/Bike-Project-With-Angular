@@ -1,0 +1,44 @@
+<div class="content-wrapper">
+    <section class="content">
+        <div class="content-header">
+            <div class="mobile-navbar">
+                <div class="content-search-button">
+                    <i class="icon-search icon-large"></i>
+                    <!-- <img src="assets/search.png" alt="Search Button" /> -->
+                </div>
+                <div class="mobile-navbar-buttons">
+                    <div class="mobile-navbar-open-main-menu">
+                        <img src="assets/open.png" />
+                    </div>
+                    <div class="mobile-navbar-open-message">
+                        <i class="icon-comment"></i>
+                    </div>
+                    <div class="mobile-navbar-open-expand-black">
+                        <img src="assets/expandBlack.png" />
+                    </div>
+                    <div class="headerUserScreen">
+                        <i id="userProfile" class="icon-user icon-large"></i>
+                    </div>
+                </div>
+                <div class="search-group">
+                    <div class="search-group-buttons">
+                        <span><input class="search-input" type="search" placeholder="Search By Name..."
+                                aria-label="Search" /></span>
+                        <span class="search"><img src="assets/search.png" class="search-button" /></span>
+                        <img src="assets/close1.png" class="close-search" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div>
+                <div class="main-content app-bike scroll-hidden">
+                    <router-outlet></router-outlet>
+                </div>
+                <div class="right-menus right scroll-hidden">
+                    <app-right-menu></app-right-menu>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
