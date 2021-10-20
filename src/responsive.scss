@@ -1,6 +1,6 @@
 //$bp = BreakPoint
 $bp: (
-    mobile: 300px,
+    mobile: 100px,
     tablet: 480px,
     tablet1: 662px,
     laptopmini: 768px,
@@ -17,7 +17,7 @@ $bp: (
     }
 }
 @include query(mobile) {
-    //mobile
+    //mobile 100px up to 480
     .header {
         justify-content: center;
         height: 5vh;
@@ -57,22 +57,198 @@ $bp: (
             display: none;
         }
     }
-    .right-menus {
-        width: 100%;
-        float: left;
-        padding: 0px;
+    .container-fluid {
+        .right-menus {
+            width: 100%;
+            float: left;
+            padding: 0px;
+        }
     }
+    /************Modal Extra Table*/
+    .modal {
+        display: none;
+        .m-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 500px;
+            min-height: 300px;
+            height: auto;
+            margin: 0 auto; // auto
+            position: relative;
+            border-radius: 5px;
+            margin-top: 120px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: all 0.3s ease-in-out;
+            &.sm-modal {
+                max-width: 300px;
+            }
+            &.l-modal {
+                max-width: 800px;
+            }
+            &.xl-modal {
+                max-width: 80%;
+            }
+            &.full-modal {
+                max-width: 100%;
+            }
+            &.bounce {
+                transform: scale(0.4);
+                transition: all 0.3s cubic-bezier(0.75, -0.5, 0, 2.75);
+            }
+            .m-title {
+                background-color: #262626;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: auto;
+                width: 100%;
+                margin: 0;
+                padding: 10px 20px;
+                border-radius: 5px 5px 0 0;
+                color: #f2f2f2;
+                font-weight: 500;
+                font-size: 18px;
+                flex-wrap: wrap;
+            }
+            .m-close {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                height: 25px;
+                width: 25px;
+                right: -7px;
+                top: -7px;
+                padding: 0;
+                margin: 0;
+                background-color: #f2f2f2;
+                border-radius: 50%;
+                transform: rotate(45deg);
+                cursor: pointer;
+                box-shadow: 0 5px 10px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            }
+            .m-close:after,
+            .m-close:before {
+                content: "";
+                display: block;
+                position: absolute;
+                background-color: #262626;
+                border-radius: 3px;
+            }
+            .m-close:after {
+                width: 2px;
+                height: 16px;
+            }
+            .m-close:before {
+                width: 16px;
+                height: 2px;
+            }
+            .m-content {
+                display: flex;
+                flex-direction: row;
+                border: 3px solid #ff5201;
+                background-color: #fff;
+                min-height: 300px;
+                width: 100%;
+                height: 5vh;
+                margin: 0;
+                padding: 20px;
+                border-radius: 0 0 5px 5px;
+                [class^="boxes-"] {
+                    display: flex;
+                    border: 3px solid #ff5201;
+                    height: 40px;
+                    overflow: scroll;
+                    overflow-x: hidden;
+                }
+                .column1 {
+                    .boxes-1,
+                    .boxes-2,
+                    .boxes-3,
+                    .boxes-4,
+                    .boxes-5,
+                    .boxes-6 {
+                        width: 75%;
+                    }
+                }
+                .column2 {
+                    .boxes-7,
+                    .boxes-8,
+                    .boxes-9,
+                    .boxes-10,
+                    .boxes-11,
+                    .boxes-12 {
+                        width: 75%;
+                    }
+                }
+                .column1 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    width: 50%;
+                }
+                .column2 {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    width: 50%;
+                }
+                .m-footer {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    margin-top: 10px;
+                    flex-wrap: wrap;
+                }
+            }
+        }
+        &.active {
+            visibility: visible;
+            opacity: 1;
+            .m-container {
+                opacity: 1;
+                &.bounce {
+                    transform: scale(1);
+                }
+            }
+        }
+    }
+    /************ End Modal Extra Tabl**/
+    .edit,
+    .delete,
+    .color {
+        display: none;
+    }
+ 
+    .edit-content:after {
+        content: "...";
+    }      
+    .hidden-edit-content-btn {
+        display: none;
+    }
+ 
+    .more-content-table {        
+        .hide {
+            display: block;
+        }
+  
+        .btn-modal,
+        .Dot3 {
+            cursor: pointer;
+            font-family: serif;
+            visibility: visible;
+            height: 30px;
+        }
+    }
+       /************ End Dot3 For table col **/
 }
 @include query(tablet) {
-    //tablet
+    //tablet 480 up to 662
     .header {
         transition: margin-left 0.3s ease-in-out;
         margin-left: 185px;
-
-        &.open-menu {
-            margin-left: 55px;
-            transition: margin-left 0.3s ease-in-out;
-        }
         .show-items {
             display: inline-block;
             cursor: pointer;
@@ -86,20 +262,55 @@ $bp: (
             display: none;
         }
         .adding-item,
-        .service,
+        .contact,
         .about {
             display: none;
         }
     }
-    .main-content {
-        width: 100%;
+    .container {
+        overflow-y: auto;
+        overflow-x: hidden;
+        &.open-menu {
+            .header,
+            .footer,
+            .content-wrapper {
+                margin-left: 55px;
+                transition: margin-left 0.3s ease-in-out;
+            }
+            .main-slider {
+                width: 55px;
+                transition: width 0.3s ease-in-out;
+                .slider-search-box {
+                    display: none;
+                }
+                .slider-text {
+                    position: fixed;
+                }
+            }
+        }
+        .header,
+        .footer,
+        .content-wrapper {
+            transition: margin-left 0.3s ease-in-out;
+        }
+        .main-slider {
+            transition: width 0.3s ease-in-out;
+        }
+        .textTopic {
+            color: whitesmoke;
+        }
     }
-    .right-menus {
-        width: 100%;
+    .container-fluid {
+        .main-content {
+            width: 100%;
+        }
+        .right-menus {
+            width: 100%;
+        }
     }
 }
 @include query(tablet1) {
-    //tablet1
+    //tablet1 up to 768
     .header {
         display: flex;
         position: -webkit-sticky;
@@ -134,6 +345,7 @@ $bp: (
             left: 30px;
             .header-menu {
                 display: flex;
+                align-items: center;
             }
             .modal-menu-tablet {
                 display: none;
@@ -184,49 +396,19 @@ $bp: (
     }
 }
 @include query(laptopmini) {
-    //mini Laptop
-    .container {
-        overflow-y: auto;
-        overflow-x: hidden;
-        &.open-menu {
-            .header,
-            .footer,
-            .content-wrapper {
-                margin-left: 55px;
-                transition: margin-left 0.3s ease-in-out;
-            }
-            .main-slider {
-                width: 55px;
-                .slider-search-box {
-                    display: none;
-                }
-                .slider-text {
-                    position: fixed;
-                }
-            }
-            .header,
-            .footer,
-            .content-wrapper {
-                transition: margin-left 0.3s ease-in-out;
-            }
+    //mini Laptop 768 up to 990
+    .container-fluid {
+        .main-content {
+            width: 50%;
+            margin-top: 20px;
         }
-        .header,
-        .footer,
-        .content-wrapper {
-            transition: margin-left 0.3s ease-in-out;
+        .right-menus {
+            width: 47%;
         }
-    }
-
-    .main-content {
-        width: 50%;
-        margin-top: 20px;
-    }
-    .right-menus {
-        width: 47%;
     }
 }
 @include query(laptop) {
-    //laptop
+    //laptop 990 up to ...
     .header {
         &.active {
             padding: 5px;
@@ -268,9 +450,33 @@ $bp: (
             }
         }
         .adding-item,
-        .service,
+        .contact,
         .about {
             display: block;
         }
     }
+    .container-fluid {
+        .right-menus {
+            width: 35%;
+        }
+    }
+    .edit,
+    .delete,
+    .color {
+        display: table-cell;
+    }
+    .more-content-table {        
+        .hide {
+            display: none;
+        }
+    }
+    .edit-content {
+        &::after {
+            content: none;
+        }   
+        .hidden-edit-content-btn {
+            display: block;
+        }
+    }
+
 }

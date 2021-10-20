@@ -11,6 +11,11 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RightMenuComponent } from './right-menu/right-menu.component';
 import { ContentWrapperComponent } from './content-wrapper/content-wrapper.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { HttpClientService } from './service/httpClient.service';
+import { HttpClientModule } from '@angular/common/http';
+import { SliderService } from './slider/slider.service';
 
 @NgModule({
   declarations: [
@@ -22,13 +27,19 @@ import { ContentWrapperComponent } from './content-wrapper/content-wrapper.compo
     FooterComponent,
     LoginComponent,
     RightMenuComponent,
-    ContentWrapperComponent
+    ContentWrapperComponent,
+    AboutComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    HttpClientService,
+    SliderService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

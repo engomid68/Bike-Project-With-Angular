@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SliderService } from '../slider/slider.service';
+
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private sliderService: SliderService
+  ) { 
+
+  }
+
+  // var let const
+  toggleSlider(event: any) {
+    this.sliderService.toggleSlider();
+  }
 
   ngOnInit(): void {
+
   }
 
 }

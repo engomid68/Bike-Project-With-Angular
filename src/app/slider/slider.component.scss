@@ -27,6 +27,68 @@
     position: absolute;
     overflow-x: hidden;
     overflow-y: scroll;
+    //     &.open-menu {
+    //     .footer,
+    //     .content-wrapper {
+    //         margin-left: 55px;
+    //         transition: margin-left 0.3s ease-in-out;
+    //     }
+    //     .main-slider {
+    //         width: 55px;
+    //         .slider-search-box {
+    //             display: none;
+    //         }
+    //         .slider-text {
+    //             position: fixed;
+    //         }
+    //         &:hover {
+    //             .sub-list {
+    //                 max-height: 0;
+    //                 .subHiddenText {
+    //                     display: none !important;
+    //                     opacity: 0 !important;
+    //                     .active {
+    //                         display: inline-block !important;
+    //                         opacity: 1 !important;
+    //                     }
+    //                 }
+    //             }
+    //             width: 185px;
+    //             transition: width 0.2s ease-in-out;
+    //             .sliderTextLogo {
+    //                 position: absolute;
+    //                 margin-left: -2px;
+    //                 transition: margin-left 0.3s ease-in-out, opacity 0.1s ease, visibility 0.1s ease;
+    //             }
+
+    //             [class^="item-"],
+    //             .slider-brand-logo {
+    //                 .hiddenText {
+    //                     display: inline-block !important;
+    //                     opacity: 1 !important;
+    //                     transform: translateX(0) !important;
+    //                 }
+    //             }
+    //             [class^="item-"].active + .sub-list {
+    //                 .hiddenText {
+    //                     display: inline-block !important;
+    //                     opacity: 1 !important;
+    //                     transform: translateX(0) !important;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+    // .footer,
+    // .content-wrapper {
+    //     transition: margin-left 0.3s ease-in-out;
+    // }
+    // .main-slider {
+    //     transition: width 0.3s ease-in-out;
+    // }
+    // .text-topic {
+    //     color: whitesmoke;
+    // }
     //********************************* ScrollBar Hidden**********************
     &::-webkit-scrollbar {
         width: 5px;
@@ -181,70 +243,7 @@
     }
 }
 /*slider Left*/
-.container {
-    &.open-menu {
-        .footer,
-        .content-wrapper {
-            margin-left: 55px;
-            transition: margin-left 0.3s ease-in-out;
-        }
-        .main-slider {
-            width: 55px;
-            .slider-search-box {
-                display: none;
-            }
-            .slider-text {
-                position: fixed;
-            }
-            &:hover {
-                .sub-list {
-                    max-height: 0;
-                    .subHiddenText {
-                        display: none !important;
-                        opacity: 0 !important;
-                        .active {
-                            display: inline-block !important;
-                            opacity: 1 !important;
-                        }
-                    }
-                }
-                width: 185px;
-                transition: width 0.2s ease-in-out;
-                .sliderTextLogo {
-                    position: absolute;
-                    margin-left: -2px;
-                    transition: margin-left 0.3s ease-in-out, opacity 0.1s ease, visibility 0.1s ease;
-                }
 
-                [class^="item-"],
-                .slider-brand-logo {
-                    .hiddenText {
-                        display: inline-block !important;
-                        opacity: 1 !important;
-                        transform: translateX(0) !important;
-                    }
-                }
-                [class^="item-"].active + .sub-list {
-                    .hiddenText {
-                        display: inline-block !important;
-                        opacity: 1 !important;
-                        transform: translateX(0) !important;
-                    }
-                }
-            }
-        }
-    }
-    .footer,
-    .content-wrapper {
-        transition: margin-left 0.3s ease-in-out;
-    }
-    .main-slider {
-        transition: width 0.3s ease-in-out;
-    }
-    .text-topic {
-        color: whitesmoke;
-    }
-}
 .main-slider:hover {
     .sub-list {
         max-height: 0;

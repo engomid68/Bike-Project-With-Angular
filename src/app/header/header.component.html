@@ -1,8 +1,10 @@
 <div class="header" id="header">
     <div class="header-button">
-        <i id="openLeftMenu" class="header-btn-open icon-align-justify"></i>
+        <div id="openLeftMenu" (click)="toggleSlider($event)" class="header-btn-open">
+            <i class="icon-align-justify"></i>
+        </div>
         <div class="header-open-left-menu">
-            <i id="openLeftMenuMobile" class="open-left-menu-mobile icon-align-justify"></i>
+            <i id="openLeftMenuMobile" (click)="toggleSlider($event)" class="open-left-menu-mobile icon-align-justify"></i>
         </div>
         <div class="header-logo">
             <i id="bikeLogoMobile" class='header-logo-mobile-bike'>
@@ -11,7 +13,6 @@
         </div>
         <div class="header-extra-menu">
             <i id="extraHeaderMobile">
-                <!--class='extra-header-mobile'-->
                 <img src="assets/dots.png">
             </i>
         </div>
@@ -19,16 +20,30 @@
     <div class="header-general">
         <!--general-->
         <div id="menu" class="header-menu">
-            <div class="nav-item-1"><a routerLink="/">Home</a></div>
-            <div class="nav-item-2"><a class="show-items">...</a><a href="#" class="about" routerLinkActive="active">About</a></div>
-            <!--addItem-->
-            <div class="nav-item-3"><a href="#" class="service">Service</a></div>
-            <div class="nav-item-4"><a class="adding-item" routerLink="/add-bike">Adding Items</a></div>
+            <div class="nav-item-1">
+                <a [routerLink]="['/']" routerLinkActive="active" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Home</a>
+            </div>
+            <div class="nav-item-2">
+                <a class="show-items">...</a>
+                <a class="about" [routerLink]="['/about']"  routerLinkActive="active">About</a>
+            </div>
+            <div class="nav-item-3">
+                <a class="contact" [routerLink]="['/contact']" routerLinkActive="active">Contact</a>
+            </div>
+            <div class="nav-item-4">
+                <a class="adding-item" [routerLink]="['/add-bike']" routerLinkActive="active">Adding Items</a>
+            </div>
         </div>
         <div class="modal-menu-tablet">
-            <div class="nav-item-2"><a href="#" >About</a></div>
-            <div class="nav-item-3"><a href="#" >Service</a></div>
-            <div class="nav-item-4"><a routerLink="/add-bike">Adding Items</a></div>
+            <div class="nav-item-2">
+                <a [routerLink]="['/about']">About</a>
+            </div>
+            <div class="nav-item-3">
+                <a [routerLink]="['/contact']">Contact</a>
+            </div>
+            <div class="nav-item-4">
+                <a [routerLink]="['/add-bike']" >Adding Items</a>
+            </div>
         </div>
     </div>
     <div class="signup-button">
