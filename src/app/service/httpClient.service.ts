@@ -32,7 +32,7 @@ export class HttpClientService {
         .toPromise();
     }
 
-    postBike(id:number,postdata:any): Promise<any>{
+    postBike(postdata:any): Promise<any>{
         const headers = { 'content-type': 'application/json'}  
         const body=JSON.stringify(postdata);
         console.log(body);

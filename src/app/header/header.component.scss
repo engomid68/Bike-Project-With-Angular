@@ -18,14 +18,17 @@
         }
     }
 }
-.header-general {
-    .header-menu {
-        [class^="nav-item-"] {
-            a {
-                &.active {
-                    padding: 5px;
-                    border: 2px solid rgb(175, 8, 8);
-                    border-radius: 5px;
+.header {
+    min-height: 13.7px;
+    .header-general {
+        .header-menu {
+            [class^="nav-item-"] {
+                a {
+                    &.active {
+                        padding: 5px;
+                        border: 2px solid rgb(175, 8, 8);
+                        border-radius: 5px;
+                    }
                 }
             }
         }

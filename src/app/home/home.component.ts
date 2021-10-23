@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { bike } from '../models';
+import { IBike } from '../models';
 import { HttpClientService } from '../service/httpClient.service';
+import { StoreService } from '../service/store.service';
 
 @Component({
   selector: 'app-home',
@@ -11,18 +12,20 @@ export class HomeComponent implements OnInit {
 
   title = 'Bike Manager';
   public isLoading: boolean = false;
-  public bikes: bike[] = [];
+  public bikes: IBike[] = [];
 
   constructor(
-    private httpClientService: HttpClientService
+    private httpClientService: HttpClientService,
+    private storeService: StoreService
     ){}
 
-  ngOnInit(): void {
+  ngOnInit(): any {
     this.isLoading = true;
     this.httpClientService.getBikesAngular()
       .then((result: any) => {
         this.isLoading = false;
-        this.bikes = result;
+        this.storeService.setBikes(result);
+        this.bikes = this.storeService.getBikes();
       }, (error) => {
         this.isLoading = false;
         // any

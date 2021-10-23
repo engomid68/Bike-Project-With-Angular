@@ -16,12 +16,24 @@
     <div class="form-inline">
         <div class="input-group" data-widget="slider-search">
             <input class="slider-search-box" type="search" placeholder="Search" aria-label="Search">
-            <!-- <div class="input-group-append">
 
-            </div> -->
             <!-- menu in slider -->
-            <ul id="menu1" class="slider-menu">
-                <li class="item-">
+            <div *ngFor="let item of data; let i = index">
+                <span> </span>
+                <button class="accordion" (click)="toggleAccordian($event, i)">
+                    <i [class]=class[i] class="img-circle"></i>
+                    {{ item.parentName }}
+                </button>
+                <div class="panel" *ngFor="let child of item.childProperties" hide="!item.isActive">
+                    <div *ngFor="let child of item.childProperties">
+                        <p>
+                            <i class="icon-circle-blank"></i><a href=""> {{ child.propertyName }}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- <ul id="menu1" class="slider-menu">
+                <li class="item-" (click)="accordion($event)">
                     <a href="#" class="bike-rent slider-link">
                         <i class="icon-dashboard img-circle"></i>
                         <span class="slider-text text-topic">Dashboard</span>
@@ -354,7 +366,7 @@
                         </a>
                     </li>
                 </ul>
-            </ul>
+            </ul> -->
         </div>
     </div>
 

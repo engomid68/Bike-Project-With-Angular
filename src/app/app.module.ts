@@ -16,6 +16,9 @@ import { ContactComponent } from './contact/contact.component';
 import { HttpClientService } from './service/httpClient.service';
 import { HttpClientModule } from '@angular/common/http';
 import { SliderService } from './slider/slider.service';
+import { FormsModule } from '@angular/forms';
+import { StoreService } from './service/store.service';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -30,15 +33,18 @@ import { SliderService } from './slider/slider.service';
     ContentWrapperComponent,
     AboutComponent,
     ContactComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     HttpClientService,
-    SliderService
+    SliderService,
+    StoreService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,11 +1,4 @@
 /*slider Left*/
-.layout-fixed .main-slider {
-    bottom: 0;
-    float: none;
-    left: 0;
-    position: fixed;
-    top: 0;
-}
 
 .elevation-4 {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
@@ -27,68 +20,6 @@
     position: absolute;
     overflow-x: hidden;
     overflow-y: scroll;
-    //     &.open-menu {
-    //     .footer,
-    //     .content-wrapper {
-    //         margin-left: 55px;
-    //         transition: margin-left 0.3s ease-in-out;
-    //     }
-    //     .main-slider {
-    //         width: 55px;
-    //         .slider-search-box {
-    //             display: none;
-    //         }
-    //         .slider-text {
-    //             position: fixed;
-    //         }
-    //         &:hover {
-    //             .sub-list {
-    //                 max-height: 0;
-    //                 .subHiddenText {
-    //                     display: none !important;
-    //                     opacity: 0 !important;
-    //                     .active {
-    //                         display: inline-block !important;
-    //                         opacity: 1 !important;
-    //                     }
-    //                 }
-    //             }
-    //             width: 185px;
-    //             transition: width 0.2s ease-in-out;
-    //             .sliderTextLogo {
-    //                 position: absolute;
-    //                 margin-left: -2px;
-    //                 transition: margin-left 0.3s ease-in-out, opacity 0.1s ease, visibility 0.1s ease;
-    //             }
-
-    //             [class^="item-"],
-    //             .slider-brand-logo {
-    //                 .hiddenText {
-    //                     display: inline-block !important;
-    //                     opacity: 1 !important;
-    //                     transform: translateX(0) !important;
-    //                 }
-    //             }
-    //             [class^="item-"].active + .sub-list {
-    //                 .hiddenText {
-    //                     display: inline-block !important;
-    //                     opacity: 1 !important;
-    //                     transform: translateX(0) !important;
-    //                 }
-    //             }
-    //         }
-    //     }
-    // }
-    // .footer,
-    // .content-wrapper {
-    //     transition: margin-left 0.3s ease-in-out;
-    // }
-    // .main-slider {
-    //     transition: width 0.3s ease-in-out;
-    // }
-    // .text-topic {
-    //     color: whitesmoke;
-    // }
     //********************************* ScrollBar Hidden**********************
     &::-webkit-scrollbar {
         width: 5px;
@@ -109,16 +40,17 @@
     }
     //********************************* ScrollBar Hidden**********************
     .slider-brand-logo {
-        height: 6.4vh;
-        margin-top: 20px;
-        margin-bottom: 5px;
+        height: 6.6vh;
+        position: relative;
+        top: 2%;
+        min-height: 33.5px;
         border: 0.5px solid #88898a;
     }
     .img-circle {
         border-radius: 50%;
         margin-left: 6px;
     }
-    &.slider-menu {
+    .slider-menu {
         display: block;
         .slider-link {
             padding: 16px 12px;
@@ -141,7 +73,6 @@
                 float: left;
                 line-height: 0.8;
                 margin-right: 5px;
-                margin-top: 8px;
                 margin-left: 5px;
                 max-height: 70px;
                 margin-bottom: 15px;
@@ -150,8 +81,7 @@
             .bike-rent {
                 text-decoration: none;
                 color: white;
-                position: fixed;
-                left: 60px;
+                margin-left: 60px;
                 opacity: 1;
                 transform: translateX(-5px);
                 &:hover {
@@ -170,16 +100,16 @@
 [class^="item-"] {
     list-style-type: none;
     transition: 1s;
-    &::after {
-        content: "\2B9F";
-        float: right;
-        color: white;
-        font-weight: 400;
-        font-family: FontAwesome;
-        font-size: 6px;
-        margin: 10px 5px 0px 0px;
-        transition: color 0.17s;
-    }
+    // &::after {
+    //     content: "\2B9F";
+    //     float: right;
+    //     color: white;
+    //     font-weight: 400;
+    //     font-family: FontAwesome;
+    //     font-size: 6px;
+    //     margin: 10px 5px 0px 0px;
+    //     transition: color 0.17s;
+    // }
     .slider-text {
         position: fixed;
         left: 45px;
@@ -188,20 +118,20 @@
             color: orange;
         }
     }
-    &.active {
-        background-color: rgb(126, 126, 126);
-        color: white;
-        &::after {
-            content: "\2B9D" !important;
-            float: right;
-            color: white;
-            font-weight: 400;
-            font-family: FontAwesome;
-            font-size: 6px;
-            margin: 10px 5px 0px 0px;
-            transition: color 0.17s;
-        }
-    }
+    // &.active {
+    //     background-color: rgb(126, 126, 126);
+    //     color: white;
+    //     &::after {
+    //         content: "\2B9D" !important;
+    //         float: right;
+    //         color: white;
+    //         font-weight: 400;
+    //         font-family: FontAwesome;
+    //         font-size: 6px;
+    //         margin: 10px 5px 0px 0px;
+    //         transition: color 0.17s;
+    //     }
+    // }
     &:hover {
         background: #343a40;
     }
@@ -274,3 +204,43 @@
         }
     }
 }
+
+
+
+.accordion {
+    background-color: transparent;
+    color: #fff;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+  }
+  .active,
+  .accordion:hover {
+    background-color: #ccc;
+  }
+  
+  .accordion:after {
+    content: '\002B';
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: '\2212';
+  }
+  
+  .panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  
