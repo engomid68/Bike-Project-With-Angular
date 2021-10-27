@@ -27,7 +27,10 @@
                 <div class="panel" *ngFor="let child of item.childProperties" hide="!item.isActive">
                     <div *ngFor="let child of item.childProperties">
                         <p>
-                            <i class="icon-circle-blank"></i><a href=""> {{ child.propertyName }}</a>
+                            <i class="icon-circle-blank"></i>
+                            <a [routerLink]=[links[i]]> 
+                                {{ child.propertyName }}
+                            </a>
                         </p>
                     </div>
                 </div>

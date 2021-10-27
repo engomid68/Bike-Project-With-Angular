@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IBike, IBikeAdd } from '../models';
+import { IBike } from '../models';
 import { HttpClientService } from '../service/httpClient.service';
 import { StoreService } from '../service/store.service';
 
@@ -12,9 +12,10 @@ import { StoreService } from '../service/store.service';
 export class AddBikeComponent implements OnInit {
 
   public bikes: IBike[] = [];
+  public id : number = 0
 
   //***********ngModel */
-  public idM: number = 0;
+  public idM: any = '';
   public name: string = '';
   public color: string = '';
   public country: string = '';
@@ -28,18 +29,39 @@ export class AddBikeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log('id=>',this.storeService.bikes);
+    this.id = +this.route.snapshot.params['id'];
+    if (this.storeService.getBike(this.id) != null) {
+      let idx: any = this.storeService.getBike(this.id);
+      this.idM = this.id;
+      this.name = idx.name;
+      this.color = idx.color;
+      this.country = idx.country;
+      this.createdAt = idx.createdAt;
+      let addBtn = document.querySelector('.add-btn');
+      (addBtn as HTMLInputElement).textContent = 'Edit';
+    }
   }
 
   addingNewBike(event: Event) {
-    let u: IBikeAdd = {
+    if (this.storeService.getBike(this.id) != null){
+      let body: IBike = {
+        createdAt: this.createdAt,
+        name: this.name,
+        color: this.color,
+        country: this.country
+      };
+      this.httpClientService.putBike(this.idM,body);
+      let uu = this.storeService.editItem(body);
+      console.log(uu);
+    }
+    let body: IBike = {
       createdAt: this.createdAt,
       name: this.name,
       color: this.color,
       country: this.country
     };
-    this.httpClientService.postBike(u)
-    let uu = this.storeService.addItem(u);
+    this.httpClientService.postBike(body);
+    let uu = this.storeService.addItem(body);
     console.log(uu);
   }
 

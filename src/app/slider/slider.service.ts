@@ -8,10 +8,8 @@ export class SliderService {
     }
 
     toggleSlider() {
-        let container= document.querySelector('.container');
-        // let sliderText = document.querySelectorAll(".accordion");
+        let container = document.querySelector('.container');
         let openLeftMenu = document.getElementById("openLeftMenu");
-        // let openLeftMenuMobile = document.getElementById("openLeftMenuMobile");
 
         // sliderText.forEach(sideBarTextName => {
         //     sideBarTextName.classList.toggle("hiddenText");

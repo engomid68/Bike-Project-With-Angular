@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { IBike } from '../models';
 import { HttpClientService } from '../service/httpClient.service';
 import { StoreService } from '../service/store.service';
+// import { IBike } from '../../models';
+// import { HttpClientService } from '../../service/httpClient.service';
+// import { StoreService } from '../../service/store.service';
 
 @Component({
   selector: 'app-home',
@@ -26,13 +29,14 @@ export class HomeComponent implements OnInit {
         this.isLoading = false;
         this.storeService.setBikes(result);
         this.bikes = this.storeService.getBikes();
+        console.log(this.bikes);
       }, (error) => {
         this.isLoading = false;
         // any
       });
   }
 
-  public deleteFunc(id: number, event: Event) {
+  public deleteFunc(id: any, event: Event) {
     console.log('event', event);
     let value = (event.target as HTMLInputElement).value;
     (event.target as HTMLInputElement).value = 'Loading...';
@@ -51,13 +55,6 @@ export class HomeComponent implements OnInit {
     let value = (event.target as HTMLInputElement).value;
     (event.target as HTMLInputElement).value = 'Please Wait';
     (event.target as HTMLInputElement).disabled = true;
-
-    let idx = this.bikes.findIndex((arr) => arr.id === id);
-    // this.idM = id;
-    // this.name = this.bikes[idx].name;
-    // this.color = this.bikes[idx].color;
-    // this.country = this.bikes[idx].country;
-    // this.createdAt = this.bikes[idx].createdAt;
     alert("You Can Edit Record on Top");
 }
 

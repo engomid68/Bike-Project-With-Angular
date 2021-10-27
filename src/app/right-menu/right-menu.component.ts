@@ -12,4 +12,8 @@ export class RightMenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onCilckParent(alert: any) {
+    window.alert(alert);
+  }
+
 }

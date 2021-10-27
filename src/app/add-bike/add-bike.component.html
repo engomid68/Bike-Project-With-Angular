@@ -4,7 +4,7 @@
         <label class="labelAddingItem" for="n1" disabled>
           ID:
         </label>
-        <input type="text" class="input"  min="1" max="1000" step="1" id="n1" name="id" pattern="\d+" disabled>
+        <input type="text" class="input"  min="1" max="1000" step="1" id="n1" name="id" pattern="\d+" [(ngModel)]="idM"  [ngModelOptions]="{standalone: true}" disabled>
       </p>
       <p>
         <label class="labelAddingItem" for="t2">
@@ -31,7 +31,7 @@
       </p>
       <br>
       <p>
-        <button type="submit" class="Add addButton" (click)="addingNewBike($event)">Add NewRecord</button>
+        <button type="submit" class="Add add-btn" (click)="addingNewBike($event)">Add NewRecord</button>
       </p>
     </form>
   </div>

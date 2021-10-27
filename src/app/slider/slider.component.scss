@@ -8,9 +8,7 @@
     background: linear-gradient(#66615b, #000 80%);
 }
 
-
 .main-slider {
-    display: block;
     z-index: 1038;
     height: 100vh;
     overflow-y: hidden;
@@ -20,6 +18,63 @@
     position: absolute;
     overflow-x: hidden;
     overflow-y: scroll;
+    .slider-search-box {
+        display: block;
+        height: calc(2.25rem + 2px);
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        box-shadow: inset 0 0 0 transparent;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        width: 90%;
+        position: relative;
+        margin-top: 11%;
+        margin-left: 8px;
+        margin-bottom: 10px;
+        .slider-search-box:focus {
+            color: #495057;
+            background-color: #fff;
+            border-color: #80bdff;
+            outline: 0;
+            box-shadow: inset 0 0 0 transparent;
+        }
+    }
+    &:hover {
+        .sub-list {
+            max-height: 0;
+            .subHiddenText {
+                display: none !important;
+                opacity: 0 !important;
+                .active {
+                    display: inline-block !important;
+                    opacity: 1 !important;
+                }
+            }
+        }
+        width: 185px;
+        transition: width 0.2s ease-in-out;
+        .sliderTextLogo {
+            position: absolute;
+            margin-left: -2px;
+            transition: margin-left 0.3s ease-in-out, opacity 0.1s ease, visibility 0.1s ease;
+        }
+    
+        [class^="item-"],
+        [class^="item-"].active,
+        .slider-brand-logo {
+            .hiddenText {
+                display: inline-block !important;
+                opacity: 1 !important;
+                transform: translateX(0) !important;
+            }
+        }
+    }
     //********************************* ScrollBar Hidden**********************
     &::-webkit-scrollbar {
         width: 5px;
@@ -100,16 +155,6 @@
 [class^="item-"] {
     list-style-type: none;
     transition: 1s;
-    // &::after {
-    //     content: "\2B9F";
-    //     float: right;
-    //     color: white;
-    //     font-weight: 400;
-    //     font-family: FontAwesome;
-    //     font-size: 6px;
-    //     margin: 10px 5px 0px 0px;
-    //     transition: color 0.17s;
-    // }
     .slider-text {
         position: fixed;
         left: 45px;
@@ -118,20 +163,6 @@
             color: orange;
         }
     }
-    // &.active {
-    //     background-color: rgb(126, 126, 126);
-    //     color: white;
-    //     &::after {
-    //         content: "\2B9D" !important;
-    //         float: right;
-    //         color: white;
-    //         font-weight: 400;
-    //         font-family: FontAwesome;
-    //         font-size: 6px;
-    //         margin: 10px 5px 0px 0px;
-    //         transition: color 0.17s;
-    //     }
-    // }
     &:hover {
         background: #343a40;
     }
@@ -174,37 +205,6 @@
 }
 /*slider Left*/
 
-.main-slider:hover {
-    .sub-list {
-        max-height: 0;
-        .subHiddenText {
-            display: none !important;
-            opacity: 0 !important;
-            .active {
-                display: inline-block !important;
-                opacity: 1 !important;
-            }
-        }
-    }
-    width: 185px;
-    transition: width 0.2s ease-in-out;
-    .sliderTextLogo {
-        position: absolute;
-        margin-left: -2px;
-        transition: margin-left 0.3s ease-in-out, opacity 0.1s ease, visibility 0.1s ease;
-    }
-
-    [class^="item-"],
-    [class^="item-"].active,
-    .slider-brand-logo {
-        .hiddenText {
-            display: inline-block !important;
-            opacity: 1 !important;
-            transform: translateX(0) !important;
-        }
-    }
-}
-
 
 
 .accordion {
@@ -218,29 +218,27 @@
     outline: none;
     font-size: 15px;
     transition: 0.4s;
-  }
-  .active,
-  .accordion:hover {
-    background-color: #ccc;
-  }
-  
-  .accordion:after {
-    content: '\002B';
-    color: #777;
-    font-weight: bold;
-    float: right;
-    margin-left: 5px;
-  }
-  
-  .active:after {
-    content: '\2212';
-  }
-  
-  .panel {
+    .active,
+    &:hover {
+        background-color: #ccc;
+    }
+    &:after {
+        content: "\002B";
+        color: #777;
+        font-weight: bold;
+        float: right;
+        margin-left: 5px;
+    }
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.panel {
     padding: 0 18px;
     background-color: white;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-  }
-  
+}

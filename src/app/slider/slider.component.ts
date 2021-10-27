@@ -129,6 +129,8 @@ export class SliderComponent implements OnInit {
   
   class: any = [];
 
+  links: any = [];
+
   ngOnInit(): void {
     this.class = [
       'icon-dashboard',
@@ -146,6 +148,10 @@ export class SliderComponent implements OnInit {
       'icon-search',
       'icon-file-alt',
       'icon-book',
+    ];
+    this.links = [
+      '/add-bike',
+      '/contact',
     ];
   }
 

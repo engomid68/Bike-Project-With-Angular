@@ -18,10 +18,6 @@ export class HttpClientService {
         .toPromise();
     }
 
-    // getBikesAngularObservable() {
-    //     return this.http.get(this.apiAdd+ 'api/v1/bikes');
-    // }
-
     deleteBike(id: number): Promise<any> {
         return this.http.delete(this.apiAdd + 'api/v1/bikes/' + id)
         .toPromise();    
@@ -36,9 +32,7 @@ export class HttpClientService {
         const headers = { 'content-type': 'application/json'}  
         const body=JSON.stringify(postdata);
         console.log(body);
-        // console.log(this.apiAdd + `api/v1/bikes/`, body,{'headers':headers});
         return this.http.post(this.apiAdd + `api/v1/bikes/`, body,{'headers':headers})
         .toPromise();
-        // .then((data: any) => { console.log(data)})
     }
 }

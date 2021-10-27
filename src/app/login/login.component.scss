@@ -14,19 +14,19 @@
     transform: all 0.3s linear;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
+    .popup-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background-color: #007bff;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        #close-login-popup {
+            cursor: pointer;
+        }
+    }
     &.active {
         opacity: 1;
         display: block;
-    }
-}
-.popup-header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #007bff;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    #close-login-popup {
-        cursor: pointer;
     }
 }

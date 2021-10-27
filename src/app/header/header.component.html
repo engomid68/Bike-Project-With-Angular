@@ -1,10 +1,10 @@
 <div class="header" id="header">
     <div class="header-button">
-        <div id="openLeftMenu" (click)="toggleSlider($event)" class="header-btn-open">
+        <div id="openLeftMenu" (click)="toggleSlider()" class="header-btn-open">
             <i class="icon-align-justify"></i>
         </div>
         <div class="header-open-left-menu">
-            <i id="openLeftMenuMobile" (click)="toggleSlider($event)" class="open-left-menu-mobile icon-align-justify"></i>
+            <i id="openLeftMenuMobile" (click)="toggleSlider()" class="open-left-menu-mobile icon-align-justify"></i>
         </div>
         <div class="header-logo">
             <i id="bikeLogoMobile" class='header-logo-mobile-bike'>
@@ -46,7 +46,7 @@
             </div>
         </div>
     </div>
-    <div class="signup-button">
+    <div class="signup-button" (click)="popupLogin()">
         <span class="signup-title">Register/Login</span>
         <i class="signup-icon icon-user icon-2x"></i>
     </div>

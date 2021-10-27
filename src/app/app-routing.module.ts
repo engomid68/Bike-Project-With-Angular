@@ -8,6 +8,10 @@ import { NotfoundComponent } from './notfound/notfound.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  // {
+  //   path: '',
+  //   loadChildren: './home/home.module#HomeModule'
+  // },
   { path: 'add-bike', component: AddBikeComponent },
   { path: 'add-bike/:id', component: AddBikeComponent },
   { path: 'about', component: AboutComponent },
