@@ -1,8 +1,7 @@
 import { NgModule } from "@angular/core";
 
-import { RightMenuComponent } from "./right-menu.component";
 import { PostContentComponent } from "./post-content/post-content.component";
-import { RightMenuRoutingModule } from "./right-menu-routing.module";
+import { RightMenuComponent } from "./right-menu-main/right-menu.component";
 
 @NgModule({
     declarations: [

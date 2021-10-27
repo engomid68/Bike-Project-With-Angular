@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IBike } from '../models';
-import { HttpClientService } from '../service/httpClient.service';
-import { StoreService } from '../service/store.service';
-// import { IBike } from '../../models';
-// import { HttpClientService } from '../../service/httpClient.service';
-// import { StoreService } from '../../service/store.service';
+import { IBike } from '../../models';
+import { HttpClientService } from '../../service/httpClient.service';
+import { StoreService } from '../../service/store.service';
 
 @Component({
   selector: 'app-home',
@@ -42,11 +39,11 @@ export class HomeComponent implements OnInit {
     (event.target as HTMLInputElement).value = 'Loading...';
     (event.target as HTMLInputElement).disabled = true;
     this.httpClientService.deleteBike(id)
-    .then((result) => {
+    .then((result: any) => {
       let idx = this.bikes.findIndex((arr) => arr.id === id);
       this.bikes.splice(idx, 1);
       alert("data delete successfully id ="+ id);
-    }, (error) => {
+    }, (error: any) => {
       console.log('HI'); 
     });
   }

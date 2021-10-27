@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IBike } from '../models';
-import { HttpClientService } from '../service/httpClient.service';
-import { StoreService } from '../service/store.service';
+
+import { HttpClientService } from 'src/app/service/httpClient.service';
+import { StoreService } from 'src/app/service/store.service';
+
+import { IBike } from 'src/app/models';
 
 @Component({
   selector: 'app-add-bike',
